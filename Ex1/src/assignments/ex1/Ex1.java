@@ -1,4 +1,6 @@
 package assignments.ex1;
+import java.util.Scanner;
+
 /**
  * This class represents a simple solution for Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
@@ -12,17 +14,45 @@ package assignments.ex1;
  * You should implement the following static functions:
  */
 public class Ex1 {
+    String Test = "152b9";
+    static String NumPart;
+    static String BasePart;
+
         /**
          * Convert the given number (num) to a decimal representation (as int).
-         * It the given number is not in a valid format returns -1.
+         * If the given number is not in a valid format returns -1.
          * @param num a String representing a number in basis [2,16]
          * @return
          */
+
         public static int number2Int(String num) {
             int ans = -1;
-            // add your code here
+            int Separator = num.indexOf('b');
 
-            ////////////////////
+            if (isNumber(num)) {
+                // If the function returns true, this block will be executed
+            } else {
+                System.out.println("Error: Num1 is in the wrong format! ("+num+")");
+                //return to scanner loop ADD ME!!!!!!!
+            }
+
+
+            //Find b and set substrings accordingly.
+            if (Separator != -1) {
+
+                NumPart = num.substring(0, Separator);
+                BasePart = num.substring(Separator + 1);
+            }
+            else {
+                //If b is not found, set NumPart to entire string and BasePart to "A"
+                NumPart = num;
+                BasePart = "A";
+                ans = Integer.parseInt(NumPart);
+            }
+
+
+
+
             return ans;
         }
         /**
@@ -32,9 +62,7 @@ public class Ex1 {
          */
         public static boolean isNumber(String a) {
             boolean ans = true;
-            // add your code here
 
-            ////////////////////
             return ans;
         }
 

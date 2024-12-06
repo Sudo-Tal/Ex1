@@ -16,10 +16,9 @@ import java.sql.SQLOutput;
  */
 public class Ex1 {
     public static void main(String[] args) {
-    String Test = "123b5";
-    number2Int(Test);
+    String Test = "1b1";
+   // number2Int(Test);
     isNumber(Test);
-        System.out.println("I hate this");
     }
         static String NumPart;
     static String BasePart;
@@ -33,7 +32,7 @@ public class Ex1 {
      * @return
      */
 
-    public static int number2Int(String num) {
+  /**  public static int number2Int(String num) {
         int ans = -1;
 
         int Separator = num.indexOf('b');
@@ -71,6 +70,8 @@ public class Ex1 {
      */
     public static boolean isNumber(String num) {
         boolean ans = true;
+        if (num == null || num.isEmpty()) return false;
+        if (num.equals("b")) return false;
 
         int Separator = num.indexOf('b');
         if (Separator != -1) {
@@ -86,7 +87,7 @@ public class Ex1 {
         boolean NumValid = true;
         for (int i = 0; i < NumPart.length(); i++) {
 
-            if      (NumPart.charAt(0) != '1'
+            if        (NumPart.charAt(i) != '1'
                     && NumPart.charAt(i) != '2'
                     && NumPart.charAt(i) != '3'
                     && NumPart.charAt(i) != '4'
@@ -112,10 +113,27 @@ public class Ex1 {
             BaseValid = false;
         }
 
+        //range check for NumPart against BasePart
+        boolean RangeValid = true;
+        char BaseChar = BasePart.charAt(0);
 
-        if (NumValid && BaseValid)
-            ans=true;
-        else ans= false;
+        int base = Character.digit(BaseChar,16);
+
+        for (int i = 0; i < NumPart.length(); i++) {
+
+            char ch = NumPart.charAt(i);
+            int Value = Character.digit(ch, 16); // Get numeric value of the character in base 16 (covers smaller bases as well)
+            if (Value == -1 || Value >= base) {
+                RangeValid= false; // Invalid character for the given base
+            }
+        }
+
+        if (NumValid && BaseValid && RangeValid) {
+            System.out.println("PASS!");
+            ans=true; }
+
+            else{ ans= false;
+            System.out.println("FAIL!");}
 
         return ans;
     }

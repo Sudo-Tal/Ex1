@@ -1,5 +1,6 @@
 package assignments.ex1;
-import java.util.Scanner;
+
+import java.sql.SQLOutput;
 
 /**
  * This class represents a simple solution for Ex1.
@@ -14,101 +15,158 @@ import java.util.Scanner;
  * You should implement the following static functions:
  */
 public class Ex1 {
-    String Test = "152b9";
-    static String NumPart;
+    public static void main(String[] args) {
+    String Test = "123b5";
+    number2Int(Test);
+    isNumber(Test);
+        System.out.println("I hate this");
+    }
+        static String NumPart;
     static String BasePart;
+    String Test = "152b9";
 
-        /**
-         * Convert the given number (num) to a decimal representation (as int).
-         * If the given number is not in a valid format returns -1.
-         * @param num a String representing a number in basis [2,16]
-         * @return
-         */
+    /**
+     * Convert the given number (num) to a decimal representation (as int).
+     * If the given number is not in a valid format returns -1.
+     *
+     * @param num a String representing a number in basis [2,16]
+     * @return
+     */
 
-        public static int number2Int(String num) {
-            int ans = -1;
-            int Separator = num.indexOf('b');
+    public static int number2Int(String num) {
+        int ans = -1;
 
-            if (isNumber(num)) {
-                // If the function returns true, this block will be executed
-            } else {
-                System.out.println("Error: Num1 is in the wrong format! ("+num+")");
-                //return to scanner loop ADD ME!!!!!!!
+        int Separator = num.indexOf('b');
+
+
+        //Find b and set substrings accordingly.
+        if (Separator != -1) {
+
+            NumPart = num.substring(0, Separator);
+            BasePart = num.substring(Separator + 1);
+        } else {
+            //If b is not found, set NumPart to entire string and BasePart to "A"
+            NumPart = num;
+            BasePart = "A";
+            ans = Integer.parseInt(NumPart);
+        }
+
+        if (isNumber(num)) {
+            //math stuff
+
+
+
+        } else {
+            System.out.println("Error: Num1 is in the wrong format! (" + num + ")");
+        }
+
+        return ans;
+    }
+
+    /**
+     * This static function checks if the given String (num) is in a valid "number" format.
+     *
+     * @param num String representing a number
+     * @return true iff the given String is in a number format
+     */
+    public static boolean isNumber(String num) {
+        boolean ans = true;
+
+        int Separator = num.indexOf('b');
+        if (Separator != -1) {
+
+            NumPart = num.substring(0, Separator);
+            BasePart = num.substring(Separator + 1);
+        } else {
+            //If b is not found, set NumPart to entire string and BasePart to "A"
+            NumPart = num;
+            BasePart = "A";
+        }
+        //validity check NumPart
+        boolean NumValid = true;
+        for (int i = 0; i < NumPart.length(); i++) {
+
+            if      (NumPart.charAt(0) != '1'
+                    && NumPart.charAt(i) != '2'
+                    && NumPart.charAt(i) != '3'
+                    && NumPart.charAt(i) != '4'
+                    && NumPart.charAt(i) != '5'
+                    && NumPart.charAt(i) != '6'
+                    && NumPart.charAt(i) != '7'
+                    && NumPart.charAt(i) != '8'
+                    && NumPart.charAt(i) != '9'
+                    && NumPart.charAt(i) != 'A'
+                    && NumPart.charAt(i) != 'B'
+                    && NumPart.charAt(i) != 'C'
+                    && NumPart.charAt(i) != 'D'
+                    && NumPart.charAt(i) != 'E'
+                    && NumPart.charAt(i) != 'F'
+                    && NumPart.charAt(i) != 'G') {
+                NumValid = false;
+                break;
             }
-
-
-            //Find b and set substrings accordingly.
-            if (Separator != -1) {
-
-                NumPart = num.substring(0, Separator);
-                BasePart = num.substring(Separator + 1);
-            }
-            else {
-                //If b is not found, set NumPart to entire string and BasePart to "A"
-                NumPart = num;
-                BasePart = "A";
-                ans = Integer.parseInt(NumPart);
-            }
-
-
-
-
-            return ans;
         }
-        /**
-         * This static function checks if the given String (g) is in a valid "number" format.
-         * @param a a String representing a number
-         * @return true iff the given String is in a number format
-         */
-        public static boolean isNumber(String a) {
-            boolean ans = true;
-
-            return ans;
+        //validity check BasePart
+        boolean BaseValid = true;
+        if (BasePart.length() != 1 || !"123456789ABCDEFG".contains(BasePart)) {
+            BaseValid = false;
         }
 
-        /**
-         * Calculate the number representation (in basis base)
-         * of the given natural number (represented as an integer).
-         * If num<0 or base is not in [2,16] the function should return "" (the empty String).
-         * @param num the natural number (include 0).
-         * @param base the basis [2,16]
-         * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
-         */
-        public static String int2Number(int num, int base) {
-            String ans = "";
-            // add your code here
 
-            ////////////////////
-            return ans;
-        }
+        if (NumValid && BaseValid)
+            ans=true;
+        else ans= false;
 
-        /**
-         * Checks if the two numbers have the same value.
-         * @param n1 first number
-         * @param n2 second number
-         * @return true iff the two numbers have the same values.
-         */
-        public static boolean equals(String n1, String n2) {
-            boolean ans = true;
-            // add your code here
+        return ans;
+    }
 
-            ////////////////////
-            return ans;
-        }
+    /**
+     * Calculate the number representation (in basis base)
+     * of the given natural number (represented as an integer).
+     * If num<0 or base is not in [2,16] the function should return "" (the empty String).
+     *
+     * @param num  the natural number (include 0).
+     * @param base the basis [2,16]
+     * @return a String representing a number (in base) equals to num, or an empty String (in case of wrong input).
+     */
+    public static String int2Number(int num, int base) {
+        String ans = "";
+        // add your code here
 
-        /**
-         * This static function search for the array index with the largest number (in value).
-         * In case there are more than one maximum - returns the first index.
-         * Note: you can assume that the array is not null and is not empty, yet it may contain null or none-valid numbers (with value -1).
-         * @param arr an array of numbers
-         * @return the index in the array in with the largest number (in value).
-         *
-         */
-        public static int maxIndex(String[] arr) {
-            int ans = 0;
-            // add your code here
+        ////////////////////
+        return ans;
+    }
 
-            ////////////////////
-            return ans;
-        }
-}
+    /**
+     * Checks if the two numbers have the same value.
+     *
+     * @param n1 first number
+     * @param n2 second number
+     * @return true iff the two numbers have the same values.
+     */
+    public static boolean equals(String n1, String n2) {
+        boolean ans = true;
+        // add your code here
+
+        ////////////////////
+        return ans;
+    }
+
+    /**
+     * This static function search for the array index with the largest number (in value).
+     * In case there are more than one maximum - returns the first index.
+     * Note: you can assume that the array is not null and is not empty, yet it may contain null or none-valid numbers (with value -1).
+     *
+     * @param arr an array of numbers
+     * @return the index in the array in with the largest number (in value).
+     */
+    public static int maxIndex(String[] arr) {
+        int ans = 0;
+        // add your code here
+
+        ////////////////////
+        return ans;
+    }
+
+
+    }

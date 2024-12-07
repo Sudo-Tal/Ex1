@@ -1,7 +1,5 @@
 package assignments.ex1;
 
-import java.sql.SQLOutput;
-
 /**
  * This class represents a simple solution for Ex1.
  * As defined here: https://docs.google.com/document/d/1AJ9wtnL1qdEs4DAKqBlO1bXCM6r6GJ_J/r/edit/edit
@@ -15,14 +13,17 @@ import java.sql.SQLOutput;
  * You should implement the following static functions:
  */
 public class Ex1 {
-    public static void main(String[] args) {
-    String Test = "1b1";
-   // number2Int(Test);
-    isNumber(Test);
-    }
-        static String NumPart;
+    static String NumPart;
     static String BasePart;
-    String Test = "152b9";
+
+    public static void main(String[] args) {
+
+        // number2Int(Test);
+
+        if (isNumber(""))
+            System.out.println("PASS!");
+        else System.out.println("FAIL!");
+    }
 
     /**
      * Convert the given number (num) to a decimal representation (as int).
@@ -32,35 +33,15 @@ public class Ex1 {
      * @return
      */
 
-  /**  public static int number2Int(String num) {
+    public static int number2Int(String num) {
         int ans = -1;
+        // add your code here
 
-        int Separator = num.indexOf('b');
-
-
-        //Find b and set substrings accordingly.
-        if (Separator != -1) {
-
-            NumPart = num.substring(0, Separator);
-            BasePart = num.substring(Separator + 1);
-        } else {
-            //If b is not found, set NumPart to entire string and BasePart to "A"
-            NumPart = num;
-            BasePart = "A";
-            ans = Integer.parseInt(NumPart);
-        }
-
-        if (isNumber(num)) {
-            //math stuff
-
-
-
-        } else {
-            System.out.println("Error: Num1 is in the wrong format! (" + num + ")");
-        }
-
+        ////////////////////
         return ans;
     }
+
+
 
     /**
      * This static function checks if the given String (num) is in a valid "number" format.
@@ -75,7 +56,6 @@ public class Ex1 {
 
         int Separator = num.indexOf('b');
         if (Separator != -1) {
-
             NumPart = num.substring(0, Separator);
             BasePart = num.substring(Separator + 1);
         } else {
@@ -85,9 +65,13 @@ public class Ex1 {
         }
         //validity check NumPart
         boolean NumValid = true;
+        if (NumPart == null || NumPart.isEmpty()) {
+            NumValid = false;
+            return false;
+        }
         for (int i = 0; i < NumPart.length(); i++) {
-
-            if        (NumPart.charAt(i) != '1'
+            if (NumPart.charAt(i) != '0'
+                    && NumPart.charAt(i) != '1'
                     && NumPart.charAt(i) != '2'
                     && NumPart.charAt(i) != '3'
                     && NumPart.charAt(i) != '4'
@@ -109,7 +93,14 @@ public class Ex1 {
         }
         //validity check BasePart
         boolean BaseValid = true;
-        if (BasePart.length() != 1 || !"123456789ABCDEFG".contains(BasePart)) {
+        if (BasePart == null || BasePart.isEmpty()) return false;
+
+        if (BasePart == null || BasePart.isEmpty()) {
+            BaseValid = false;
+            return false;
+        }
+
+        if (BasePart.length() != 1 || !"23456789ABCDEFG".contains(BasePart)) {
             BaseValid = false;
         }
 
@@ -117,23 +108,24 @@ public class Ex1 {
         boolean RangeValid = true;
         char BaseChar = BasePart.charAt(0);
 
-        int base = Character.digit(BaseChar,16);
+        int base = Character.digit(BaseChar, 17);
 
         for (int i = 0; i < NumPart.length(); i++) {
 
-            char ch = NumPart.charAt(i);
-            int Value = Character.digit(ch, 16); // Get numeric value of the character in base 16 (covers smaller bases as well)
+            char NumChar = NumPart.charAt(i);
+            int Value = Character.digit(NumChar, 17); // Get numeric value of the character in base 16 (covers smaller bases as well)
+
+
             if (Value == -1 || Value >= base) {
-                RangeValid= false; // Invalid character for the given base
+                RangeValid = false; // Invalid character for the given base
             }
         }
 
         if (NumValid && BaseValid && RangeValid) {
-            System.out.println("PASS!");
-            ans=true; }
-
-            else{ ans= false;
-            System.out.println("FAIL!");}
+            ans = true;
+        } else {
+            ans = false;
+        }
 
         return ans;
     }
@@ -185,6 +177,4 @@ public class Ex1 {
         ////////////////////
         return ans;
     }
-
-
-    }
+}

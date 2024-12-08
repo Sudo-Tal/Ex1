@@ -176,6 +176,8 @@ public class Ex1 {
             for (int i = BaseResult.length() - 1; i >= 0; i--) {
                 ReversedResult += BaseResult.charAt(i);
             }
+
+            ReversedResult =ReversedResult+"b"+base;
             ans = ReversedResult;
             System.out.println(ans);
 
@@ -194,7 +196,7 @@ public class Ex1 {
      */
     public static boolean equals(String n1, String n2) {
         boolean ans = true;
-        if (Integer.parseInt(n1) != Integer.parseInt(n2)) {
+        if (number2Int(n1) != number2Int(n2)){
             ans = false;
         }
 

@@ -19,6 +19,6 @@ public class Ex1Main {
                 return;
             }
         }
-        System.out.println("quiting now...");
+        System.out.println("quitting now...");
     }
 }

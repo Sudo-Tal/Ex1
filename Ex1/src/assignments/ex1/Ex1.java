@@ -18,11 +18,7 @@ public class Ex1 {
 
     public static void main(String[] args) {
 
-        // number2Int(Test);
 
-        if (isNumber(""))
-            System.out.println("PASS!");
-        else System.out.println("FAIL!");
     }
 
     /**
@@ -35,10 +31,32 @@ public class Ex1 {
 
     public static int number2Int(String num) {
         int ans = -1;
-        // add your code here
+        if (isNumber(num)) {
 
-        ////////////////////
-        return ans;
+        int Separator = num.indexOf('b');
+        if (Separator != -1) {
+            NumPart = num.substring(0, Separator);
+            BasePart = num.substring(Separator + 1);
+        } else {
+            //If b is not found, set NumPart to entire string and BasePart to "A"
+            NumPart = num;
+            BasePart = "A";
+        }
+
+        if (BasePart.equals("A")) BasePart = "10";
+        if (BasePart.equals("B")) BasePart = "11";
+        if (BasePart.equals("C")) BasePart = "12";
+        if (BasePart.equals("D")) BasePart = "13";
+        if (BasePart.equals("E")) BasePart = "14";
+        if (BasePart.equals("F")) BasePart = "15";
+        if (BasePart.equals("G")) BasePart = "16";
+
+
+        int num1 = Integer.parseInt(NumPart, Integer.parseInt(BasePart));
+
+        ans = num1;
+    }
+     return ans;
     }
 
 
@@ -141,9 +159,29 @@ public class Ex1 {
      */
     public static String int2Number(int num, int base) {
         String ans = "";
-        // add your code here
+        String BaseResult = "";
+        String ReversedResult = "";
 
-        ////////////////////
+        if (num >= 0 && (base >= 2 && base <= 16)) {
+
+            if (num == 0) {
+                return "0";
+            }
+            while (num > 0) {
+                int remainder = num % base;
+                BaseResult = BaseResult + String.valueOf(remainder);  // Append the remainder to the result
+                num /= base;  // Divide the number by the base
+            }
+            // Reverse the string
+            for (int i = BaseResult.length() - 1; i >= 0; i--) {
+                ReversedResult += BaseResult.charAt(i);
+            }
+            ans = ReversedResult;
+            System.out.println(ans);
+
+
+
+        }
         return ans;
     }
 
@@ -156,9 +194,10 @@ public class Ex1 {
      */
     public static boolean equals(String n1, String n2) {
         boolean ans = true;
-        // add your code here
+        if (Integer.parseInt(n1) != Integer.parseInt(n2)) {
+            ans = false;
+        }
 
-        ////////////////////
         return ans;
     }
 
@@ -172,9 +211,14 @@ public class Ex1 {
      */
     public static int maxIndex(String[] arr) {
         int ans = 0;
-        // add your code here
+        int MaxValue = 0;
 
-        ////////////////////
+        for (int i = 1; i < arr.length; i++ ) {
+            if (Integer.parseInt(arr[i]) > Integer.parseInt(arr[MaxValue])) { MaxValue = i; }
+
+    }
+        ans = MaxValue;
+        System.out.println(ans);
         return ans;
     }
 }

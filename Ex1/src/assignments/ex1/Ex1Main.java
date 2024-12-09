@@ -21,7 +21,7 @@ public class Ex1Main {
                 }
 
                 if (Ex1.isNumber(num1)) {
-                    System.out.println("num1= "+ num1 + "is number: true , value: "+ Ex1.number2Int(num1));
+                    System.out.println("num1= "+ num1 + " is number: true , value: "+ Ex1.number2Int(num1));
                     System.out.println("Enter a string as number#2 (or \"quit\" to end the program): ");
                     num2 = sc.next();
                     if (num2.equals("quit")) {
@@ -30,8 +30,8 @@ public class Ex1Main {
                     }
 
                     if (Ex1.isNumber(num2)) {
-                        System.out.println("num1= "+ num1 + "is number: true , value: "+ Ex1.number2Int(num1));
-                        System.out.println("Enter a base for output: (a number [2,16])");
+                        System.out.println("num2= "+ num2 + " is number: true , value: "+ Ex1.number2Int(num2));
+                        System.out.println("Enter a base for output: (a number [2,16]");
                         base = Integer.parseInt(sc.next());
                         if (base < 2 || base > 16) {
                             System.out.println("ERR: wrong base, should be [2,16], got (" + base + ")");
@@ -48,10 +48,21 @@ public class Ex1Main {
 
                         sumString = Ex1.int2Number(sumInt, base);
                         productString= Ex1.int2Number(productInt, base);
+                        int[] myArray = {Ex1.number2Int(num1), Ex1.number2Int(num2), Ex1.number2Int(sumString), Ex1.number2Int(productString)};
+
+                        int maxNum = myArray[0];
+                        int maxIndex = 0;
+
+                        for (int i = 1; i < myArray.length; i++) {
+                            if (myArray[i] > maxNum) {
+                                maxIndex = i;
+                                maxNum = myArray[i];
+                            }
+                        }
 
                         System.out.println(num1 +" + "+ num2 +" = "+ sumString );
                         System.out.println(num1 +" * "+ num2 +" = "+ productString);
-
+                        System.out.println("Max number over ["+ num1 + ","+ num2+ ","+ sumString+ ","+ productString+"] is: "+ Ex1.int2Number(maxNum, base));
 
 
 

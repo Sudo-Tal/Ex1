@@ -37,11 +37,17 @@ public class Ex1Test {
         }
         @Test
         void int2NumberTest() {
-           // implement this test
+           assertEquals(11, Ex1.number2Int("1011b2"));
+
+
+
+
         }
         @Test
         void maxIndexTest() {
-            // implement this test
+            String[] arr0 = {"10bA", "1bA", "2bA", "20bA"};
+            assertEquals(3, Ex1.maxIndex(arr0));
+
         }
 
         // Add additional test functions - test as much as you can.

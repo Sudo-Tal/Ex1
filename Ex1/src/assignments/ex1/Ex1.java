@@ -206,7 +206,7 @@ public class Ex1 {
         int MaxValue = 0;
 
         for (int i = 1; i < arr.length; i++) {
-            if (Integer.parseInt(arr[i]) > Integer.parseInt(arr[MaxValue])) {
+            if (number2Int(arr[i]) > number2Int(arr[MaxValue])) {
                 MaxValue = i;
             }
 

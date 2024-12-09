@@ -49,21 +49,13 @@ public class Ex1Main {
 
                         sumString = Ex1.int2Number(sumInt, base);
                         productString = Ex1.int2Number(productInt, base);
-                        int[] myArray = {Ex1.number2Int(num1), Ex1.number2Int(num2), Ex1.number2Int(sumString), Ex1.number2Int(productString)};
+                        String[] myArray = {num1, num2, sumString, productString};
 
-                        int maxNum = myArray[0];
-                        int maxIndex = 0;
-
-                        for (int i = 1; i < myArray.length; i++) {
-                            if (myArray[i] > maxNum) {
-                                maxIndex = i;
-                                maxNum = myArray[i];
-                            }
-                        }
+                        int max = Ex1.maxIndex(myArray);
 
                         System.out.println(num1 + " + " + num2 + " = " + sumString);
                         System.out.println(num1 + " * " + num2 + " = " + productString);
-                        System.out.println("Max number over [" + num1 + "," + num2 + "," + sumString + "," + productString + "] is: " + Ex1.int2Number(maxNum, base));
+                        System.out.println("Max number over [" + num1 + "," + num2 + "," + sumString + "," + productString + "] is: " + myArray[max]);
 
                     } else {
                         System.out.println("num2= " + num2 + "is number: false , value: " + Ex1.number2Int(num1));

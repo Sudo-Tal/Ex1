@@ -179,8 +179,6 @@ public class Ex1 {
 
             ReversedResult =ReversedResult+"b"+base;
             ans = ReversedResult;
-            System.out.println(ans);
-
 
 
         }

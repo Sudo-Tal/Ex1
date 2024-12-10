@@ -46,6 +46,13 @@ public class Ex1Test {
             assertEquals("12b9", Ex1.int2Number(11, 9));
             assertEquals("200211001102101b3", Ex1.int2Number(10000000, 3));
             assertEquals("6247bD", Ex1.int2Number(13579, 13));
+            assertEquals("15", Ex1.int2Number(15, 10));
+            assertEquals("0", Ex1.int2Number(0, 10));
+            assertEquals("0bG", Ex1.int2Number(0, 16));
+            assertEquals("0bF", Ex1.int2Number(0, 15));
+            assertEquals("0bB", Ex1.int2Number(0, 11));
+
+
         }
         @Test
         void maxIndexTest() {

@@ -16,11 +16,6 @@ public class Ex1 {
     static String NumPart;
     static String BasePart;
 
-    public static void main(String[] args) {
-
-
-    }
-
     /**
      * Convert the given number (num) to a decimal representation (as int).
      * If the given number is not in a valid format returns -1.
@@ -110,7 +105,6 @@ public class Ex1 {
         }
         //validity check BasePart
         boolean BaseValid = true;
-        if (BasePart == null || BasePart.isEmpty()) return false;
 
         if (BasePart == null || BasePart.isEmpty()) {
             BaseValid = false;
@@ -160,11 +154,31 @@ public class Ex1 {
         if (num >= 0 && (base >= 2 && base <= 16)) {
 
             if (num == 0) {
-                return "0";
+                return "0b"+base;
             }
             while (num > 0) {
                 int remainder = num % base;
-                BaseResult = BaseResult + remainder;  // Append the remainder to the result
+                char baseChar ='A';
+                if (remainder == 0) baseChar = '0';
+                if (remainder == 1) baseChar = '1';
+                if (remainder == 2) baseChar = '2';
+                if (remainder == 3) baseChar = '3';
+                if (remainder == 4) baseChar = '4';
+                if (remainder == 5) baseChar = '5';
+                if (remainder == 6) baseChar = '6';
+                if (remainder == 7) baseChar = '7';
+                if (remainder == 8) baseChar = '8';
+                if (remainder == 9) baseChar = '9';
+                if (remainder == 10) baseChar = 'A';
+                if (remainder == 11) baseChar = 'B';
+                if (remainder == 12) baseChar = 'C';
+                if (remainder == 13) baseChar = 'D';
+                if (remainder == 14) baseChar = 'E';
+                if (remainder == 15) baseChar = 'F';
+                if (remainder == 16) baseChar = 'G';
+
+
+                BaseResult = BaseResult + baseChar;  // Append the remainder to the result in string form
                 num /= base;  // Divide the number by the base
             }
             // Reverse the string
@@ -172,7 +186,27 @@ public class Ex1 {
                 ReversedResult += BaseResult.charAt(i);
             }
 
-            ReversedResult = ReversedResult + "b" + base;
+            ReversedResult = ReversedResult + "b";
+
+            char baseChar ='A';
+            if (base == 2) baseChar = '2';
+            if (base == 3) baseChar = '3';
+            if (base == 4) baseChar = '4';
+            if (base == 5) baseChar = '5';
+            if (base == 6) baseChar = '6';
+            if (base == 7) baseChar = '7';
+            if (base == 8) baseChar = '8';
+            if (base == 9) baseChar = '9';
+            if (base == 10) baseChar = 'A';
+            if (base == 11) baseChar = 'B';
+            if (base == 12) baseChar = 'C';
+            if (base == 13) baseChar = 'D';
+            if (base == 14) baseChar = 'E';
+            if (base == 15) baseChar = 'F';
+            if (base == 16) baseChar = 'G';
+
+            ReversedResult = ReversedResult + baseChar;
+
             ans = ReversedResult;
 
 
@@ -212,7 +246,6 @@ public class Ex1 {
 
         }
         ans = MaxValue;
-        System.out.println(ans);
         return ans;
     }
 }

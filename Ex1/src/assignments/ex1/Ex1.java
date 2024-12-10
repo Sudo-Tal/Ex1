@@ -222,7 +222,10 @@ public class Ex1 {
      * @return true iff the two numbers have the same values.
      */
     public static boolean equals(String n1, String n2) {
-        boolean ans = number2Int(n1) == number2Int(n2);
+        boolean ans = false;
+        if (number2Int(n1) == -1 || number2Int(n2) == -1)
+            return ans;
+        ans = number2Int(n1) == number2Int(n2);
 
         return ans;
     }

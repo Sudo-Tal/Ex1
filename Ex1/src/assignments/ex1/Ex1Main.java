@@ -58,13 +58,13 @@ public class Ex1Main {
                         System.out.println("Max number over [" + num1 + "," + num2 + "," + sumString + "," + productString + "] is: " + myArray[max]);
 
                     } else {
-                        System.out.println("num2= " + num2 + "is number: false , value: " + Ex1.number2Int(num1));
-                        System.out.println("ERR: num2 is in the wrong format! " + num2 + "\n");
+                        System.out.println("num2= " + num2 + "is number: false , value: " + Ex1.number2Int(num2));
+                        System.out.println("ERR: num2 is in the wrong format! (" + num2 + ")\n");
                     }
 
                 } else {
                     System.out.println("num1= " + num1 + " is number: false , value: " + Ex1.number2Int(num1));
-                    System.out.println("ERR: num1 is in the wrong format! " + num1 + "\n");
+                    System.out.println("ERR: num1 is in the wrong format! (" + num1 + ")\n");
                 }
 
 

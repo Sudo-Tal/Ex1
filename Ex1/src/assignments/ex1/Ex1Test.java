@@ -121,11 +121,14 @@ public class Ex1Test {
     assertTrue(Ex1.equals("111b2","21b3"));
     assertTrue(Ex1.equals("21b3","13b4"));
     assertTrue(Ex1.equals("44b5","40b6"));
-    assertTrue(Ex1.equals("1430b3","80b6"));
     assertTrue(Ex1.equals("44b7","100000b2"));
     assertTrue(Ex1.equals("10b7","21b3"));
     assertTrue(Ex1.equals("A6bB","98bC"));
+    assertTrue(Ex1.equals("42bC", "122b6"));
 
+    assertFalse(Ex1.equals("4b3", "2b5"));
+    assertFalse(Ex1.equals("1430b3","80b6"));
+    assertFalse(Ex1.equals("11b0 ","15b4"));
     assertFalse(Ex1.equals("11b2 ","11"));
     assertFalse(Ex1.equals("22b3 ","22"));
     assertFalse(Ex1.equals("33b4 ","33"));

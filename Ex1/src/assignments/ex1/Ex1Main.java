@@ -47,6 +47,7 @@ public class Ex1Main {
                         sumInt = Ex1.number2Int(num1) + Ex1.number2Int(num2);
                         productInt = Ex1.number2Int(num1) * Ex1.number2Int(num2);
 
+
                         sumString = Ex1.int2Number(sumInt, base);
                         productString = Ex1.int2Number(productInt, base);
                         String[] myArray = {num1, num2, sumString, productString};

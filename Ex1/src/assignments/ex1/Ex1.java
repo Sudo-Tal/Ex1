@@ -154,13 +154,7 @@ public class Ex1 {
         if (num >= 0 && (base >= 2 && base <= 16)) {
 
             if (num == 0) {
-                if (base == 10) {
-                    return "0";
-                }
-                if (base == 16) {
-                    return "0bG";
-                }
-                return "0b" + Integer.toHexString(base).toUpperCase();
+                return "0";
             }
             while (num > 0) {
                 int remainder = num % base;
@@ -192,6 +186,8 @@ public class Ex1 {
                 ReversedResult += BaseResult.charAt(i);
             }
 
+            ReversedResult = ReversedResult + "b";
+
             char baseChar ='A';
             if (base == 2) baseChar = '2';
             if (base == 3) baseChar = '3';
@@ -209,9 +205,8 @@ public class Ex1 {
             if (base == 15) baseChar = 'F';
             if (base == 16) baseChar = 'G';
 
-            if (baseChar !='A') {
-                ReversedResult = ReversedResult + "b" + baseChar;
-            }
+            ReversedResult = ReversedResult + baseChar;
+
             ans = ReversedResult;
 
 

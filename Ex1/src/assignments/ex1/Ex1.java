@@ -158,7 +158,7 @@ public class Ex1 {
             }
             while (num > 0) {
                 int remainder = num % base;
-                char baseChar ='A';
+                char baseChar = 'A';
                 if (remainder == 0) baseChar = '0';
                 if (remainder == 1) baseChar = '1';
                 if (remainder == 2) baseChar = '2';
@@ -188,7 +188,7 @@ public class Ex1 {
 
             ReversedResult = ReversedResult + "b";
 
-            char baseChar ='A';
+            char baseChar = 'A';
             if (base == 2) baseChar = '2';
             if (base == 3) baseChar = '3';
             if (base == 4) baseChar = '4';

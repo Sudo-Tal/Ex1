@@ -1,7 +1,8 @@
 package assignments.ex1;
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * This JUnit class represents a very partial test class for Ex1.
@@ -9,64 +10,66 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 
 public class Ex1Test {
-        @Test
-        void computeNumberTest() {
-            String s2 = "1011b2";
-            int v = Ex1.number2Int(s2);
-            assertEquals(v,11);
-            String s10 = "1011bA";
-            v = Ex1.number2Int(s10);
-            s2 = Ex1.int2Number(v,2);
-            int v2 = Ex1.number2Int(s2);
-            assertEquals(v,v2);
-            assertTrue(Ex1.equals(s10,s2));
-        }
+    @Test
+    void computeNumberTest() {
+        String s2 = "1011b2";
+        int v = Ex1.number2Int(s2);
+        assertEquals(v, 11);
+        String s10 = "1011bA";
+        v = Ex1.number2Int(s10);
+        s2 = Ex1.int2Number(v, 2);
+        int v2 = Ex1.number2Int(s2);
+        assertEquals(v, v2);
+        assertTrue(Ex1.equals(s10, s2));
+    }
 
-        @Test
-        void isBasisNumberTest() {
-            String[] good = {"1", "1b2", "01b2", "123bA", "ABbG", "0bA", "123", "01010101b2", "ABCbD", "65b7"};
-            for(int i=0;i<good.length;i=i+1) {
-                boolean ok = Ex1.isNumber(good[i]);
-                assertTrue(ok);
-            }
-            String[] not_good = {"b2", "2b2", "1G3bG", " BbG", "0bbA", "abB", "!@b2", "A", "1bb2", "b", "-15bA"};
-            for(int i=0;i<not_good.length;i=i+1) {
-                boolean not_ok = Ex1.isNumber(not_good[i]);
-                assertFalse(not_ok);
-            }
+    @Test
+    void isBasisNumberTest() {
+        String[] good = {"1", "1b2", "01b2", "123bA", "ABbG", "0bA", "123", "01010101b2", "ABCbD", "65b7"};
+        for (int i = 0; i < good.length; i = i + 1) {
+            boolean ok = Ex1.isNumber(good[i]);
+            assertTrue(ok);
         }
-        @Test
-        void int2NumberTest() {
-            assertEquals("1011b2", Ex1.int2Number(11, 2));
-            assertEquals("A5BCbG", Ex1.int2Number(42428, 16));
-            assertEquals("1372CbE", Ex1.int2Number(48060, 14));
-            assertEquals("0", Ex1.int2Number(0, 2));
-            assertEquals("1234567b8", Ex1.int2Number(342391, 8));
-            assertEquals("1000b5", Ex1.int2Number(125, 5));
-            assertEquals("12b9", Ex1.int2Number(11, 9));
-            assertEquals("200211001102101b3", Ex1.int2Number(10000000, 3));
-            assertEquals("6247bD", Ex1.int2Number(13579, 13));
-            assertEquals("15bA", Ex1.int2Number(15, 10));
-            assertEquals("0", Ex1.int2Number(0, 11));
-            assertEquals("0", Ex1.int2Number(0, 10));
-            assertEquals("0", Ex1.int2Number(0, 16));
-            assertEquals("0", Ex1.int2Number(0, 15));
-            assertEquals("0", Ex1.int2Number(0, 11));
+        String[] not_good = {"b2", "2b2", "1G3bG", " BbG", "0bbA", "abB", "!@b2", "A", "1bb2", "b", "-15bA"};
+        for (int i = 0; i < not_good.length; i = i + 1) {
+            boolean not_ok = Ex1.isNumber(not_good[i]);
+            assertFalse(not_ok);
+        }
+    }
+
+    @Test
+    void int2NumberTest() {
+        assertEquals("1011b2", Ex1.int2Number(11, 2));
+        assertEquals("A5BCbG", Ex1.int2Number(42428, 16));
+        assertEquals("1372CbE", Ex1.int2Number(48060, 14));
+        assertEquals("0", Ex1.int2Number(0, 2));
+        assertEquals("1234567b8", Ex1.int2Number(342391, 8));
+        assertEquals("1000b5", Ex1.int2Number(125, 5));
+        assertEquals("12b9", Ex1.int2Number(11, 9));
+        assertEquals("200211001102101b3", Ex1.int2Number(10000000, 3));
+        assertEquals("6247bD", Ex1.int2Number(13579, 13));
+        assertEquals("15bA", Ex1.int2Number(15, 10));
+        assertEquals("0", Ex1.int2Number(0, 11));
+        assertEquals("0", Ex1.int2Number(0, 10));
+        assertEquals("0", Ex1.int2Number(0, 16));
+        assertEquals("0", Ex1.int2Number(0, 15));
+        assertEquals("0", Ex1.int2Number(0, 11));
 
 
-        }
-        @Test
-        void maxIndexTest() {
-            String[] arr0 = {"10bA", "1bA", "2bA", "20bA"};
-            assertEquals(3, Ex1.maxIndex(arr0));
-            String[] arr1 = {"10", "100", "500", "0"};
-            assertEquals(2, Ex1.maxIndex(arr1));
-            String[] arr2 = {"ABCbG", "5bA", "A5bD", "0bD"};
-            assertEquals(0, Ex1.maxIndex(arr2));
-            String[] arr3 = {"10bA", "1bA", "2bA", "20bA"};
-            assertEquals(3, Ex1.maxIndex(arr3));
+    }
 
-        }
+    @Test
+    void maxIndexTest() {
+        String[] arr0 = {"10bA", "1bA", "2bA", "20bA"};
+        assertEquals(3, Ex1.maxIndex(arr0));
+        String[] arr1 = {"10", "100", "500", "0"};
+        assertEquals(2, Ex1.maxIndex(arr1));
+        String[] arr2 = {"ABCbG", "5bA", "A5bD", "0bD"};
+        assertEquals(0, Ex1.maxIndex(arr2));
+        String[] arr3 = {"10bA", "1bA", "2bA", "20bA"};
+        assertEquals(3, Ex1.maxIndex(arr3));
+
+    }
 
     @Test
     void number2intTest() {
@@ -126,28 +129,27 @@ public class Ex1Test {
 
     @Test
     void equalsTest() {
-    assertTrue(Ex1.equals("111b2","21b3"));
-    assertTrue(Ex1.equals("21b3","13b4"));
-    assertTrue(Ex1.equals("44b5","40b6"));
-    assertTrue(Ex1.equals("44b7","100000b2"));
-    assertTrue(Ex1.equals("10b7","21b3"));
-    assertTrue(Ex1.equals("A6bB","98bC"));
-    assertTrue(Ex1.equals("42bC", "122b6"));
+        assertTrue(Ex1.equals("111b2", "21b3"));
+        assertTrue(Ex1.equals("21b3", "13b4"));
+        assertTrue(Ex1.equals("44b5", "40b6"));
+        assertTrue(Ex1.equals("44b7", "100000b2"));
+        assertTrue(Ex1.equals("10b7", "21b3"));
+        assertTrue(Ex1.equals("A6bB", "98bC"));
+        assertTrue(Ex1.equals("42bC", "122b6"));
 
-    assertFalse(Ex1.equals("4b3", "2b5"));
-    assertFalse(Ex1.equals("1430b3","80b6"));
-    assertFalse(Ex1.equals("11b0 ","15b4"));
-    assertFalse(Ex1.equals("11b2 ","11"));
-    assertFalse(Ex1.equals("22b3 ","22"));
-    assertFalse(Ex1.equals("33b4 ","33"));
-    assertFalse(Ex1.equals("44b5 ","44"));
-    assertFalse(Ex1.equals("55b6 ","55"));
-    assertFalse(Ex1.equals("66b7 ","66"));
-    assertFalse(Ex1.equals("77b8 ","77"));
-    assertFalse(Ex1.equals("88b9 ","88"));
-    assertFalse(Ex1.equals("99bA ","99"));
-    assertFalse(Ex1.equals("BBb13 ","11b3"));
-    assertFalse(Ex1.equals("CDb13 ","250bA"));
+        assertFalse(Ex1.equals("4b3", "2b5"));
+        assertFalse(Ex1.equals("1430b3", "80b6"));
+        assertFalse(Ex1.equals("11b0 ", "15b4"));
+        assertFalse(Ex1.equals("11b2 ", "11"));
+        assertFalse(Ex1.equals("22b3 ", "22"));
+        assertFalse(Ex1.equals("33b4 ", "33"));
+        assertFalse(Ex1.equals("44b5 ", "44"));
+        assertFalse(Ex1.equals("55b6 ", "55"));
+        assertFalse(Ex1.equals("66b7 ", "66"));
+        assertFalse(Ex1.equals("77b8 ", "77"));
+        assertFalse(Ex1.equals("88b9 ", "88"));
+        assertFalse(Ex1.equals("99bA ", "99"));
+        assertFalse(Ex1.equals("BBb13 ", "11b3"));
+        assertFalse(Ex1.equals("CDb13 ", "250bA"));
     }
-
 }

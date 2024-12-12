@@ -1,6 +1,6 @@
-# Ex1 - Foundation of Functional Programming & Testing - Ariel University - Intro2CS
+# Ex1 - Foundation of Functional Programming & Testing - Ariel University Intro2CS -- Solution
 
-## Welcome to the Ex1 Assignment Repository!
+## Welcome to my Ex1 Assignment Solution Repository!
 
 Welcome to the official repository for the "Ex1 - Foundation of Functional Programming & Testing" assignment from The Ariel University's School of Computer Science.
 

@@ -20,21 +20,21 @@ Between these two numbers a Sum and a Product will be calculated and produced.
 **The Third** is the base which the answers will be formatted to, the base must be a decimal number from 2-16.
 
 Notes:
-**Decimal numbers are accpted with no base specified.
+**Decimal numbers are accepted with no base specified.
 **In the results, the base will be represented by its corresponding Hexadecimal Letter.
 ## How to Use
 
 1. **Enter First Number**:
    Referred to as *"num1"* should be in the format of:
 
-==Number+b+Base==
+*Number+b+Base*
 
 `Example: "135b10", "100111b2"`
 
 Note: Make sure your inputted number is legal for the specified base, or it will be marked as an illegal entry.
 
 2. **Enter Second Number**:
-   Same as Step 1, Reffered to as *"num2"*
+   Same as Step 1, Referred to as *"num2"*
 
 3. **Enter Base**:
    Should be a decimal number ranging between 2-16.
@@ -44,36 +44,36 @@ If at any point you wish to quit the program, Type `quit` when prompted for a nu
 
 ## Results
 The results will show the sum of the two numbers provided along with their product.
-They will also show the largerst number between the numbers inputted, the sum and the product.
+They will also show the largest number between the numbers inputted, the sum and the product.
 
 ## Examples
 **Here are two examples of an interaction:**
 
-*Ex1 class solution:
-Enter a string as number#1 (or "quit" to end the program):
-15b7
-num1= 15b7 is number: true , value: 12
-Enter a string as number#2 (or "quit" to end the program):
-23b4
-num2= 23b4 is number: true , value: 11
-Enter a base for output: (a number [2,16]
-2
-15b7 + 23b4 = 10111b2
-15b7 * 23b4 = 10000100b2
-Max number over [15b7,23b4,10111b2,10000100b2] is: 10000100b2*
+Ex1 class solution: <br />
+Enter a string as number#1 (or "quit" to end the program):<br />
+15b7<br />
+num1= 15b7 is number: true , value: 12<br />
+Enter a string as number#2 (or "quit" to end the program):<br />
+23b4<br />
+num2= 23b4 is number: true , value: 11<br />
+Enter a base for output: (a number [2,16]<br />
+2<br />
+15b7 + 23b4 = 10111b2<br />
+15b7 * 23b4 = 10000100b2<br />
+Max number over [15b7,23b4,10111b2,10000100b2] is: 10000100b2<br />
 
-*Ex1 class solution:
-Enter a string as number#1 (or "quit" to end the program):
-1011011b2
-num1= 1011011b2 is number: true , value: 91
-Enter a string as number#2 (or "quit" to end the program):
-1011b2
-num2= 1011b2 is number: true , value: 11
-Enter a base for output: (a number [2,16]
-4
-1011011b2 + 1011b2 = 1212b4
-1011011b2 * 1011b2 = 33221b4
-Max number over [1011011b2,1011b2,1212b4,33221b4] is: 33221b4*
+*Ex1 class solution:<br />
+Enter a string as number#1 (or "quit" to end the program):<br />
+1011011b2<br />
+num1= 1011011b2 is number: true , value: 91<br />
+Enter a string as number#2 (or "quit" to end the program):<br />
+1011b2<br />
+num2= 1011b2 is number: true , value: 11<br />
+Enter a base for output: (a number [2,16]<br />
+4<br />
+1011011b2 + 1011b2 = 1212b4<br />
+1011011b2 * 1011b2 = 33221b4<br />
+Max number over [1011011b2,1011b2,1212b4,33221b4] is: 33221b4*<br />
 
 ## FlowChart
 

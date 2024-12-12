@@ -62,10 +62,18 @@ public class Ex1Main {
                         //calculate index of largest number
                         int max = Ex1.maxIndex(myArray);
 
+                        //Remove bA if exists (number is decimal)
+                        num1 = num1.replace("bA", "");
+                        num2 = num2.replace("bA", "");
+                        sumString = sumString.replace("bA", "");
+                        productString = productString.replace("bA", "");
+                        String MaxNumber = myArray[max];
+                        MaxNumber = MaxNumber.replace("bA", "");
+
                         //print results
                         System.out.println(num1 + " + " + num2 + " = " + sumString);
                         System.out.println(num1 + " * " + num2 + " = " + productString);
-                        System.out.println("Max number over [" + num1 + "," + num2 + "," + sumString + "," + productString + "] is: " + myArray[max]);
+                        System.out.println("Max number over [" + num1 + "," + num2 + "," + sumString + "," + productString + "] is: " + MaxNumber);
 
                     } else {
                         System.out.println("num2= " + num2 + "is number: false , value: " + Ex1.number2Int(num2));

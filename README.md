@@ -32,7 +32,7 @@ If at any point you wish to quit the program, Type `quit` when prompted for a nu
 ## Examples
 **Here are two examples of an interaction:**
 
-Ex1 class solution:\
+*Ex1 class solution:\
 Enter a string as number#1 (or "quit" to end the program):\
 15b7\
 num1= 15b7 is number: true , value: 12\
@@ -43,7 +43,7 @@ Enter a base for output: (a number [2,16]\
 2\
 15b7 + 23b4 = 10111b2\
 15b7 * 23b4 = 10000100b2\
-Max number over [15b7,23b4,10111b2,10000100b2] is: 10000100b2\
+Max number over [15b7,23b4,10111b2,10000100b2] is: 10000100b2*
 
 *Ex1 class solution:\
 Enter a string as number#1 (or "quit" to end the program):\
@@ -56,4 +56,4 @@ Enter a base for output: (a number [2,16]\
 4\
 1011011b2 + 1011b2 = 1212b4\
 1011011b2 * 1011b2 = 33221b4\
-Max number over [1011011b2,1011b2,1212b4,33221b4] is: 33221b4*\
+Max number over [1011011b2,1011b2,1212b4,33221b4] is: 33221b4*

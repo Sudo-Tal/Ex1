@@ -13,6 +13,7 @@ package assignments.ex1;
  * You should implement the following static functions:
  */
 public class Ex1 {
+    // Set static variables to store the number part and base part of the input
     static String NumPart;
     static String BasePart;
 
@@ -28,7 +29,7 @@ public class Ex1 {
         int ans = -1;
         if (isNumber(num)) {
 
-            int Separator = num.indexOf('b');
+            int Separator = num.indexOf('b');  // Separate the number part and the base part using 'b' as a separator
             if (Separator != -1) {
                 NumPart = num.substring(0, Separator);
                 BasePart = num.substring(Separator + 1);
@@ -38,6 +39,7 @@ public class Ex1 {
                 BasePart = "A";
             }
 
+            // Convert the base letter to the corresponding base number
             if (BasePart.equals("A")) BasePart = "10";
             if (BasePart.equals("B")) BasePart = "11";
             if (BasePart.equals("C")) BasePart = "12";
@@ -46,7 +48,7 @@ public class Ex1 {
             if (BasePart.equals("F")) BasePart = "15";
             if (BasePart.equals("G")) BasePart = "16";
 
-
+            // Convert the number from the specified base to decimal
             int num1 = Integer.parseInt(NumPart, Integer.parseInt(BasePart));
 
             ans = num1;
@@ -81,6 +83,7 @@ public class Ex1 {
             NumValid = false;
             return false;
         }
+        //Validity checks for NumberPart chars
         for (int i = 0; i < NumPart.length(); i++) {
             if (NumPart.charAt(i) != '0'
                     && NumPart.charAt(i) != '1'
@@ -156,6 +159,7 @@ public class Ex1 {
             if (num == 0) {
                 return "0";
             }
+            // Convert the number to the given base by repeatedly dividing and getting remainders
             while (num > 0) {
                 int remainder = num % base;
                 char baseChar = 'A';
